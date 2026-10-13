@@ -2,7 +2,7 @@
 
 PortalPorto: koleksi 7 template portfolio personal dengan karakter berbeda — untuk desainer, developer, dan kreator.
 
-**Demo live:** https://www.pintuweb.com/website-portofolio
+**Demo live:** https://www.pintuweb.id/website-portofolio
 
 ![Tangkapan layar PortalPorto](public/og.jpg)
 
@@ -51,4 +51,4 @@ Buka http://localhost:3000. Untuk build produksi: `npm run build` lalu `npm star
 
 ---
 
-Dibuat oleh [PintuWeb](https://www.pintuweb.com), jasa pembuatan website.
+Dibuat oleh [PintuWeb](https://www.pintuweb.id), jasa pembuatan website.

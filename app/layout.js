@@ -7,10 +7,10 @@ import ThemeToggle from '@/components/ThemeToggle';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', weight: ['500', '600', '700'], display: 'swap' });
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalPorto","description":"Koleksi 7 template portfolio personal","url":"https://www.pintuweb.com/website-portofolio","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.com"},{"@type":"ListItem","position":2,"name":"Website Portofolio","item":"https://www.pintuweb.com/website-portofolio"}]}};
+const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalPorto","description":"Koleksi 7 template portfolio personal","url":"https://www.pintuweb.id/website-portofolio","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.id"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.id"},{"@type":"ListItem","position":2,"name":"Website Portofolio","item":"https://www.pintuweb.id/website-portofolio"}]}};
 
 export const metadata = {
-  metadataBase: new URL("https://www.pintuweb.com/website-portofolio"),
+  metadataBase: new URL("https://www.pintuweb.id/website-portofolio"),
   title: "PortalPorto — Galeri Portfolio Personal",
   description: "PortalPorto: koleksi 7 template portfolio personal dengan karakter berbeda — untuk desainer, developer, dan kreator.",
   applicationName: "PortalPorto",
@@ -18,11 +18,11 @@ export const metadata = {
   authors: [{ name: "PortalPorto" }],
   creator: "PortalPorto",
   publisher: "PortalPorto",
-  alternates: { canonical: "https://www.pintuweb.com/website-portofolio" },
+  alternates: { canonical: "https://www.pintuweb.id/website-portofolio" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://www.pintuweb.com/website-portofolio",
+    url: "https://www.pintuweb.id/website-portofolio",
     siteName: "PortalPorto",
     title: "PortalPorto — Galeri Portfolio Personal",
     description: "PortalPorto: koleksi 7 template portfolio personal dengan karakter berbeda — untuk desainer, developer, dan kreator.",
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
           {/* Jejak: portal ini bagian dari PintuWeb */}
           <nav aria-label="Jejak" className="bg-gray-900 text-gray-100 text-xs">
             <ol className="mx-auto flex max-w-7xl px-4 sm:px-6 lg:px-8 items-center gap-2 py-1.5">
-              <li><a href="https://www.pintuweb.com" className="font-semibold underline-offset-4 hover:underline">PintuWeb</a></li>
+              <li><a href="https://www.pintuweb.id" className="font-semibold underline-offset-4 hover:underline">PintuWeb</a></li>
               <li aria-hidden="true" className="opacity-60">/</li>
               <li aria-current="page">Website Portofolio</li>
             </ol>
@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
               <p className="mt-10 border-t border-gray-100 pt-6 text-center text-sm text-gray-500 dark:border-white/10 dark:text-gray-400">
-                © {new Date().getFullYear()} {site.name} · dibuat oleh <a href="https://www.pintuweb.com" className="underline-offset-4 hover:underline">PintuWeb</a>.
+                © {new Date().getFullYear()} {site.name} · dibuat oleh <a href="https://www.pintuweb.id" className="underline-offset-4 hover:underline">PintuWeb</a>.
               </p>
             </div>
           </footer>
