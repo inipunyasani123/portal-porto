@@ -19,13 +19,13 @@ Katalog template portfolio. Hero bento, kartu berbingkai browser yang menggulir 
 
 ## Varian yang dipamerkan (7)
 
-- [Aria](https://portfolio-aria-pearl.vercel.app)
-- [Carlos Mendoza](https://portfolio-carlos-eosin.vercel.app)
-- [Celeste](https://portfolio-celeste-one.vercel.app)
-- [Milo](https://portfolio-milo.vercel.app)
-- [Noelle](https://portfolio-noelle-one.vercel.app)
-- [Rex](https://portfolio-rex-zeta.vercel.app)
-- [Sorelle](https://portfolio-sorelle.vercel.app)
+- [Aria](https://portfolio-aria.pintuweb.id)
+- [Carlos Mendoza](https://portfolio-carlos.pintuweb.id)
+- [Celeste](https://portfolio-celeste.pintuweb.id)
+- [Milo](https://portfolio-milo.pintuweb.id)
+- [Noelle](https://portfolio-noelle.pintuweb.id)
+- [Rex](https://portfolio-rex.pintuweb.id)
+- [Sorelle](https://portfolio-sorelle.pintuweb.id)
 
 ## Halaman
 
