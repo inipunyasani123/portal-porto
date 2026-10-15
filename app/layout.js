@@ -1,37 +1,44 @@
 import './globals.css';
 import { Inter, Space_Grotesk } from 'next/font/google';
-import { site } from './data/templates';
+import templates, { site } from './data/templates';
+import { LANJUT, GALERI_LAIN, PINTUWEB } from './data/pintuweb';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import ThemeProvider from '@/components/ThemeProvider';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', weight: ['500', '600', '700'], display: 'swap' });
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalPorto","description":"Koleksi 7 template portfolio personal","url":"https://www.pintuweb.id/website-portofolio","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.id"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.id"},{"@type":"ListItem","position":2,"name":"Website Portofolio","item":"https://www.pintuweb.id/website-portofolio"}]}};
+// Merek di hasil pencarian & pratinjau tautan = PintuWeb. Jumlah template dihitung dari data, bukan ditulis tangan.
+const URL_PORTAL = 'https://www.pintuweb.id/website-portofolio';
+const TITLE = `Contoh Website Portofolio: ${templates.length} Demo Siap Coba | PintuWeb`;
+const DESCRIPTION = `${templates.length} contoh website portofolio dengan gaya berbeda untuk desainer, developer, dan kreator. Buka demo live dan studi kasusnya, lalu pesan di PintuWeb.`;
+
+const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":TITLE,"description":DESCRIPTION,"url":URL_PORTAL,"inLanguage":"id-ID","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.id"},"publisher":{"@type":"Organization","name":"PintuWeb","url":"https://www.pintuweb.id"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.id"},{"@type":"ListItem","position":2,"name":"Website Portofolio","item":URL_PORTAL}]}};
 
 export const metadata = {
-  metadataBase: new URL("https://www.pintuweb.id/website-portofolio"),
-  title: "PortalPorto — Galeri Portfolio Personal",
-  description: "PortalPorto: koleksi 7 template portfolio personal dengan karakter berbeda — untuk desainer, developer, dan kreator.",
-  applicationName: "PortalPorto",
+  metadataBase: new URL(URL_PORTAL),
+  title: { default: TITLE, template: '%s | PintuWeb' },
+  description: DESCRIPTION,
+  applicationName: "PintuWeb",
   keywords: ["template portfolio", "portfolio personal", "koleksi portfolio", "website portfolio"],
-  authors: [{ name: "PortalPorto" }],
-  creator: "PortalPorto",
-  publisher: "PortalPorto",
-  alternates: { canonical: "https://www.pintuweb.id/website-portofolio" },
+  authors: [{ name: "PintuWeb", url: "https://www.pintuweb.id" }],
+  creator: "PintuWeb",
+  publisher: "PintuWeb",
+  alternates: { canonical: URL_PORTAL },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://www.pintuweb.id/website-portofolio",
-    siteName: "PortalPorto",
-    title: "PortalPorto — Galeri Portfolio Personal",
-    description: "PortalPorto: koleksi 7 template portfolio personal dengan karakter berbeda — untuk desainer, developer, dan kreator.",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "PortalPorto — Galeri Portfolio Personal" }],
+    url: URL_PORTAL,
+    siteName: "PintuWeb",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: TITLE }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PortalPorto — Galeri Portfolio Personal",
-    description: "PortalPorto: koleksi 7 template portfolio personal dengan karakter berbeda — untuk desainer, developer, dan kreator.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["/og.jpg"],
   },
   robots: {
@@ -66,7 +73,10 @@ export default function RootLayout({ children }) {
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
               <a href="#top" className="flex items-center gap-2 text-lg font-bold tracking-tight">
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm text-white">P</span>
-                {site.name}
+                <span className="flex flex-col leading-none">
+                  {site.name}{' '}
+                  <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-600 dark:text-indigo-400">{site.label}</span>
+                </span>
               </a>
               <nav className="hidden items-center gap-7 md:flex">
                 {navLinks.map((l) => (
@@ -90,7 +100,10 @@ export default function RootLayout({ children }) {
                 <div>
                   <div className="flex items-center gap-2 text-lg font-bold">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm text-white">P</span>
-                    {site.name}
+                    <span className="flex flex-col leading-none">
+                      {site.name}{' '}
+                      <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-600 dark:text-indigo-400">{site.label}</span>
+                    </span>
                   </div>
                   <p className="mt-3 max-w-xs text-sm text-gray-500 dark:text-gray-400">{site.tagline} — template portofolio modern, cepat, dan siap pakai.</p>
                 </div>
@@ -109,8 +122,29 @@ export default function RootLayout({ children }) {
                   </a>
                 </div>
               </div>
-              <p className="mt-10 border-t border-gray-100 pt-6 text-center text-sm text-gray-500 dark:border-white/10 dark:text-gray-400">
-                © {new Date().getFullYear()} {site.name} · dibuat oleh <a href="https://www.pintuweb.id" className="underline-offset-4 hover:underline">PintuWeb</a>.
+              {/* Lanjut di PintuWeb: harga, layanan, semua demo, dan galeri lain di situs utama */}
+              <nav aria-labelledby="lanjut-pintuweb" className="mt-10 border-t border-gray-100 pt-8 dark:border-white/10">
+                <p id="lanjut-pintuweb" className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Lanjut di PintuWeb</p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {LANJUT.map((l) => (
+                    <li key={l.href}>
+                      <a href={l.href} className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-600 hover:text-white dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300 dark:hover:bg-indigo-500 dark:hover:text-white">
+                        {l.label} <ArrowUpRightIcon className="h-3.5 w-3.5" aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Galeri lain</p>
+                <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+                  {GALERI_LAIN.map((g) => (
+                    <li key={g.path}>
+                      <a href={`${PINTUWEB}/${g.path}`} className="text-sm text-gray-600 underline decoration-gray-300 underline-offset-4 transition hover:text-indigo-600 dark:text-gray-300 dark:decoration-white/20 dark:hover:text-indigo-400">{g.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <p className="mt-8 border-t border-gray-100 pt-6 text-center text-sm text-gray-500 dark:border-white/10 dark:text-gray-400">
+                © {new Date().getFullYear()} <a href="https://www.pintuweb.id" className="underline-offset-4 hover:underline">PintuWeb</a> · Galeri {site.label}.
               </p>
             </div>
           </footer>

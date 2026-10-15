@@ -1,5 +1,6 @@
 export const site = {
-  name: 'PortalPorto',
+  name: 'PintuWeb',
+  label: 'Website Portofolio',
   tagline: 'Portal Template Portofolio',
   description:
     'Tujuh template website portofolio, masing-masing dengan gaya sendiri. Buka demo live-nya, lihat studi kasus di dalamnya, lalu pesan untuk diisi dengan karyamu.',
@@ -109,7 +110,7 @@ export const categories = ['All', 'Personal', 'Developer', 'Creative'];
 export const stats = [
   { value: '7', label: 'Template, gaya berbeda' },
   { value: '14', label: 'Halaman per template' },
-  { value: '3–5', label: 'Hari kerja pengerjaan' },
+  { value: '2–3', label: 'Hari kerja pengerjaan' },
   { value: '2', label: 'Tema: terang & gelap' },
 ];
 
@@ -130,7 +131,7 @@ export const process = [
 ];
 
 export const faqs = [
-  { q: 'Apa itu PortalPorto?', a: 'Katalog tujuh template website portofolio buatan PintuWeb. Setiap template bisa dibuka sebagai demo live sebelum dipesan.' },
+  { q: 'Apa isi galeri ini?', a: 'Katalog tujuh template website portofolio buatan PintuWeb. Setiap template bisa dibuka sebagai demo live sebelum dipesan.' },
   { q: 'Apakah klien dan proyek di template itu nyata?', a: 'Bukan. Persona di setiap template fiktif, dan proyeknya adalah demo live dari koleksi kami sendiri. Saat dipesan, semuanya diganti dengan karya, foto, dan kontak milikmu.' },
   { q: 'Berapa biaya dan lama pengerjaannya?', a: 'Paket Portofolio di PintuWeb mulai Rp750 ribu sampai Rp1,25 juta, dikerjakan 2–3 hari kerja setelah materi lengkap. Rinciannya ada di pintuweb.id.' },
   { q: 'Apakah templatenya bisa dikustomisasi?', a: 'Bisa. Warna, teks, foto, jumlah proyek, dan halaman bisa disesuaikan dengan kebutuhanmu.' },
