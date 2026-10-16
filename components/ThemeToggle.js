@@ -7,16 +7,17 @@ export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-  const isDark = resolvedTheme === 'dark';
+  const isDark = mounted && resolvedTheme === 'dark';
 
   return (
     <button
       type="button"
-      aria-label="Ganti tema"
+      aria-label="Tema gelap"
+      aria-pressed={mounted ? isDark : undefined}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="grid h-9 w-9 place-items-center rounded-full border border-gray-200 text-gray-600 transition hover:border-indigo-300 hover:text-indigo-600 dark:border-white/15 dark:text-gray-300 dark:hover:text-white"
+      className="grid h-10 w-10 place-items-center rounded-full border border-gray-200 text-gray-700 transition hover:border-indigo-300 hover:text-indigo-700 dark:border-white/15 dark:text-gray-300 dark:hover:text-white"
     >
-      {mounted && isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+      {isDark ? <SunIcon className="h-5 w-5" aria-hidden="true" /> : <MoonIcon className="h-5 w-5" aria-hidden="true" />}
     </button>
   );
 }

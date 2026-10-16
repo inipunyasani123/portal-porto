@@ -1,14 +1,19 @@
+import { PAKET, wa } from './pintuweb';
+
 export const site = {
   name: 'PintuWeb',
   label: 'Website Portofolio',
-  tagline: 'Portal Template Portofolio',
   description:
     'Tujuh template website portofolio, masing-masing dengan gaya sendiri. Buka demo live-nya, lihat studi kasus di dalamnya, lalu pesan untuk diisi dengan karyamu.',
-  whatsapp: 'https://wa.me/6285190931399',
+  whatsapp: wa('Halo PintuWeb, saya tertarik template website portofolio. Boleh minta info?'),
 };
+
+/** Pesan WhatsApp yang langsung menyebut template pilihan. */
+export const waTemplate = (t) => wa(`Halo PintuWeb, saya tertarik template portofolio ${t.title}. Boleh minta info?`);
 
 // Halaman yang sama di setiap template: 5 halaman utama + 6 studi kasus + 3 artikel.
 const HALAMAN = ['Beranda', 'Tentang', 'Karya', '6 studi kasus', 'Blog', '3 artikel', 'Kontak'];
+const JUMLAH_HALAMAN = 5 + 6 + 3; // 5 halaman utama + 6 studi kasus + 3 artikel
 
 const templates = [
   {
@@ -44,7 +49,7 @@ const templates = [
     tagline: 'Ceria & hangat — desainer UI/UX',
     image: '/website-portofolio/templates/p3.webp',
     url: 'https://portfolio-sorelle.pintuweb.id',
-    category: 'Creative',
+    category: 'Kreatif',
     tags: ['Ceria', 'Pastel', 'Biru'],
     desc: 'Blob pastel, judul Syne, dan aksen biru untuk desainer situs keluarga, edukasi, dan pengrajin. Filter portofolionya benar-benar menyaring.',
     stack: ['Next.js', 'Tailwind', 'Framer Motion', 'next-themes'],
@@ -70,7 +75,7 @@ const templates = [
     tagline: 'Neo-brutalis — tegas & lantang',
     image: '/website-portofolio/templates/p5.webp',
     url: 'https://portfolio-rex.pintuweb.id',
-    category: 'Creative',
+    category: 'Kreatif',
     tags: ['Brutalis', 'Tegas', 'Lime'],
     desc: 'Garis tebal, bayangan keras, dan blok lime untuk desainer grafis yang juga menulis kode. Studi kasusnya radio, toko kecil, dan halaman band.',
     stack: ['Next.js', 'Tailwind', 'Framer Motion', 'next-themes'],
@@ -96,7 +101,7 @@ const templates = [
     tagline: 'Bento ceria — cerah & ramah',
     image: '/website-portofolio/templates/p7.webp',
     url: 'https://portfolio-milo.pintuweb.id',
-    category: 'Creative',
+    category: 'Kreatif',
     tags: ['Ceria', 'Bento', 'Pastel'],
     desc: 'Ubin pastel membulat dan font Fredoka untuk desainer & ilustrator. Studi kasusnya halaman link-in-bio dan undangan bergaya buku cerita.',
     stack: ['Next.js', 'Tailwind', 'Framer Motion', 'next-themes'],
@@ -104,13 +109,13 @@ const templates = [
   },
 ];
 
-export const categories = ['All', 'Personal', 'Developer', 'Creative'];
+export const categories = ['Semua', 'Personal', 'Developer', 'Kreatif'];
 
-// Angka dari isi koleksi; durasi & harga dari paket Portofolio di pintuweb.id.
+// Angka dari isi koleksi (dihitung dari data); durasi dari PAKET (paket Portofolio di pintuweb.id).
 export const stats = [
-  { value: '7', label: 'Template, gaya berbeda' },
-  { value: '14', label: 'Halaman per template' },
-  { value: '2–3', label: 'Hari kerja pengerjaan' },
+  { value: String(templates.length), label: 'Template, gaya berbeda' },
+  { value: String(JUMLAH_HALAMAN), label: 'Halaman per template' },
+  { value: PAKET.waktuAngka, label: 'Hari kerja pengerjaan' },
   { value: '2', label: 'Tema: terang & gelap' },
 ];
 
@@ -131,9 +136,9 @@ export const process = [
 ];
 
 export const faqs = [
-  { q: 'Apa isi galeri ini?', a: 'Katalog tujuh template website portofolio buatan PintuWeb. Setiap template bisa dibuka sebagai demo live sebelum dipesan.' },
+  { q: 'Apa isi galeri ini?', a: `Katalog ${templates.length} template website portofolio buatan PintuWeb. Setiap template bisa dibuka sebagai demo live sebelum dipesan.` },
   { q: 'Apakah klien dan proyek di template itu nyata?', a: 'Bukan. Persona di setiap template fiktif, dan proyeknya adalah demo live dari koleksi kami sendiri. Saat dipesan, semuanya diganti dengan karya, foto, dan kontak milikmu.' },
-  { q: 'Berapa biaya dan lama pengerjaannya?', a: 'Paket Portofolio di PintuWeb mulai Rp750 ribu sampai Rp1,25 juta, dikerjakan 2–3 hari kerja setelah materi lengkap. Rinciannya ada di pintuweb.id.' },
+  { q: 'Berapa biaya dan lama pengerjaannya?', a: `Paket Portofolio di PintuWeb mulai ${PAKET.mulai} sampai ${PAKET.sampai}, dikerjakan ${PAKET.waktu} setelah materi lengkap. Rinciannya ada di pintuweb.id.` },
   { q: 'Apakah templatenya bisa dikustomisasi?', a: 'Bisa. Warna, teks, foto, jumlah proyek, dan halaman bisa disesuaikan dengan kebutuhanmu.' },
   { q: 'Bagaimana cara memesan?', a: 'Pilih template, klik "Pesan template ini" atau "Hubungi", lalu kita lanjutkan lewat WhatsApp.' },
 ];
