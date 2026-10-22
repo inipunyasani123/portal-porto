@@ -13,8 +13,8 @@ export const wa = (teks) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponen
  */
 export const PAKET = {
   nama: 'Portofolio / Personal Branding',
-  mulai: 'Rp750 ribu',
-  sampai: 'Rp1,25 juta',
+  mulai: 'Rp150 ribu',
+  sampai: 'Rp1,2 juta',
   waktu: '2–3 hari kerja',
   waktuAngka: '2–3',
 };

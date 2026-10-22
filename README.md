@@ -13,7 +13,7 @@ PortalPorto: koleksi 7 template portfolio personal dengan karakter berbeda — u
 Katalog template portfolio. Hero bento, kartu berbingkai browser yang menggulir pratinjau halaman penuh saat disorot, modal detail, dan mode gelap.
 
 - Isi katalog ada di `app/data/templates.js`. Setiap template punya 14 halaman (5 halaman utama, 6 studi kasus, 3 artikel); Carlos menambah Privasi & Ketentuan.
-- Durasi dan harga (hero, statistik, FAQ) diambil dari `PAKET` di `app/data/pintuweb.js`, salinan paket Portofolio / Personal Branding di `PintuWeb/app/lib/packages.ts` (2–3 hari kerja, Rp750 ribu–Rp1,25 juta; harga per 13 Oktober 2026). Ubah di sana dulu bila berubah.
+- Durasi dan harga (hero, statistik, FAQ) diambil dari `PAKET` di `app/data/pintuweb.js`, salinan paket Portofolio / Personal Branding di `PintuWeb/app/lib/packages.ts` (2–3 hari kerja, Rp150 ribu–Rp1,2 juta; harga per 22 Oktober 2026). Ubah di sana dulu bila berubah.
 - Tanpa testimoni atau rating bintang: portal ini belum punya ulasan pelanggan sungguhan.
 - Pratinjau `public/templates/p<n>.webp` (1280×880 @2x) dan `f<n>.webp` (halaman penuh, lebar 900) diambil dari demo live (22 Okt 2026); urutan n: noelle, carlos, sorelle, aria, rex, celeste, milo. Setelah mengganti `p<n>.webp`, buat ulang variannya dengan `node scripts/gambar-varian.mjs`.
 
