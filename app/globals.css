@@ -11,13 +11,14 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
-/* Tautan lompat ke konten: tersembunyi sampai difokus papan ketik */
+/* Tautan lompat ke konten: tersembunyi sampai difokus papan ketik. Digeser jauh di atas layar dan tanpa bayangan
+   sampai difokus, jadi bayangannya tidak mengintip di tepi atas. */
 .lewati {
-  position: fixed; left: 1rem; top: 0.75rem; z-index: 60; transform: translateY(-160%);
+  position: fixed; left: 1rem; top: 0.75rem; z-index: 60; transform: translateY(calc(-100% - 2rem));
   border-radius: 9999px; background: #4f46e5; color: #fff;
-  padding: 0.5rem 1rem; font-weight: 600; font-size: 0.875rem; box-shadow: 0 8px 20px -8px rgba(79, 70, 229, 0.6);
+  padding: 0.5rem 1rem; font-weight: 600; font-size: 0.875rem;
 }
-.lewati:focus { transform: none; }
+.lewati:focus { transform: none; box-shadow: 0 8px 20px -8px rgba(79, 70, 229, 0.6); }
 main:focus { outline: none; }
 
 :focus-visible { outline: 3px solid #6366f1; outline-offset: 3px; }
