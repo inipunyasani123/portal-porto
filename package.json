@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "node scripts/ambil-harga.mjs app/data/harga.json",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."
