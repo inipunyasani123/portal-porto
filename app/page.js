@@ -3,6 +3,7 @@ import {
   MagnifyingGlassIcon, ChevronDownIcon, DevicePhoneMobileIcon, BoltIcon, SparklesIcon, PaintBrushIcon, ChatBubbleLeftRightIcon,
 } from '@heroicons/react/24/outline';
 import Katalog from '@/components/Katalog';
+import StripDemo from '@/components/StripDemo';
 import templates, { site, stats, features, process, faqs } from './data/templates';
 import { PAKET } from './data/pintuweb';
 
@@ -25,28 +26,29 @@ export default function HomePage() {
   return (
     <main id="konten" tabIndex={-1}>
       {/* Hero — bento */}
-      <section className="mesh relative overflow-hidden px-4 pb-10 pt-10 sm:px-6 sm:pb-12 sm:pt-14 lg:px-8">
+      <section id="hero" className="mesh relative overflow-hidden px-4 pb-6 pt-6 sm:px-6 sm:pb-12 sm:pt-14 lg:px-8">
         <div className="absolute left-1/2 top-[-120px] -z-10 h-[360px] w-[640px] -translate-x-1/2 rounded-full bg-indigo-200/40 blur-3xl dark:bg-indigo-600/20" aria-hidden="true" />
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
-          <div className="text-center lg:text-left">
-            <span className="naik inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-200">
+          <div className="min-w-0 text-center lg:text-left">
+            <span className="naik hidden items-center gap-2 sm:inline-flex rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-200">
               <span aria-hidden="true" className="text-indigo-500 dark:text-indigo-300">◆</span> {templates.length} template · {templates.length} gaya
             </span>
-            <h1 className="mt-5 text-[2.5rem] font-extrabold leading-[1.04] tracking-tight text-gray-900 md:text-6xl dark:text-white">
+            <h1 className="text-[2rem] sm:mt-5 sm:text-[2.5rem] font-extrabold leading-[1.04] tracking-tight text-gray-900 md:text-6xl dark:text-white">
               Website portofolio, <span className="text-indigo-600 dark:text-indigo-400">siap diisi karyamu</span>.
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-base text-gray-600 sm:text-lg lg:mx-0 dark:text-gray-300">{site.description}</p>
-            <div className="naik naik-2 mt-7 flex flex-wrap justify-center gap-3 sm:mt-8 lg:justify-start">
+            <p className="mx-auto mt-5 hidden max-w-xl text-base sm:block text-gray-600 sm:text-lg lg:mx-0 dark:text-gray-300">{site.description}</p>
+            <div className="naik naik-2 mt-4 flex flex-wrap justify-center gap-3 sm:mt-8 lg:justify-start">
               <a href="#templates" className="inline-flex min-h-12 items-center rounded-full bg-indigo-600 px-6 font-semibold text-white shadow-lg shadow-indigo-600/20 transition hover:bg-indigo-700 active:scale-95 sm:px-7">Lihat Template</a>
               <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-gray-300 bg-white px-6 font-semibold text-gray-800 transition hover:border-indigo-300 hover:text-indigo-700 active:scale-95 sm:px-7 dark:border-white/15 dark:bg-white/5 dark:text-gray-200 dark:hover:text-white">Konsultasi Gratis</a>
             </div>
             {/* Ringkasan paket: angka dari PAKET (PintuWeb packages.ts) */}
-            <p className="mt-5 text-sm text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-sm text-gray-700 sm:mt-5 dark:text-gray-300">
               Paket Portofolio mulai <strong className="font-semibold text-indigo-700 dark:text-indigo-300">{PAKET.mulai}</strong> <span className="whitespace-nowrap"><span aria-hidden="true" className="mx-1.5 text-indigo-400">◆</span>{PAKET.waktu}</span>
             </p>
+            <StripDemo />
           </div>
 
-          <div className="grid grid-cols-3 gap-2.5 sm:grid-cols-2 sm:gap-4">
+          <div className="hidden grid-cols-3 gap-2.5 sm:grid sm:grid-cols-2 sm:gap-4">
             {CUPLIK.map((c) => (
               <div key={c.src} className={`animate-float overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl sm:rounded-2xl dark:border-white/10 dark:bg-white/5 ${c.kotak} ${c.jeda}`}>
                 <div className={`relative w-full ${c.rasio}`}>

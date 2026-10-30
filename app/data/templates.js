@@ -1,15 +1,15 @@
-import { PAKET, wa } from './pintuweb';
+import { PAKET, JENIS, wa } from './pintuweb';
 
 export const site = {
   name: 'PintuWeb',
   label: 'Website Portofolio',
   description:
     'Tujuh template website portofolio, masing-masing dengan gaya sendiri. Buka demo live-nya, lihat studi kasus di dalamnya, lalu pesan untuk diisi dengan karyamu.',
-  whatsapp: wa('Halo PintuWeb, saya tertarik template website portofolio. Boleh minta info?'),
+  whatsapp: wa('Halo PintuWeb, saya tertarik website portofolio. Boleh minta info?'),
 };
 
 /** Pesan WhatsApp yang langsung menyebut template pilihan. */
-export const waTemplate = (t) => wa(`Halo PintuWeb, saya tertarik template portofolio ${t.title}. Boleh minta info?`);
+export const waTemplate = (t) => wa(`Halo PintuWeb, saya tertarik ${JENIS} seperti contoh ${t.title} (${t.url}). Boleh minta info?`);
 
 // Halaman yang sama di setiap template: 5 halaman utama + 6 studi kasus + 3 artikel.
 const HALAMAN = ['Beranda', 'Tentang', 'Karya', '6 studi kasus', 'Blog', '3 artikel', 'Kontak'];
@@ -22,6 +22,7 @@ const templates = [
     title: 'Noelle',
     tagline: 'Minimal editorial — desainer UI/UX',
     image: '/website-portofolio/templates/p1.webp',
+    potret: '/website-portofolio/templates/m1.webp',
     url: 'https://portfolio-noelle.pintuweb.id',
     category: 'Personal',
     tags: ['Minimal', 'Terang', 'UI/UX'],
@@ -35,6 +36,7 @@ const templates = [
     title: 'Carlos',
     tagline: 'Gelap tegas — desainer & developer',
     image: '/website-portofolio/templates/p2.webp',
+    potret: '/website-portofolio/templates/m2.webp',
     url: 'https://portfolio-carlos.pintuweb.id',
     category: 'Developer',
     tags: ['Gelap', 'Tegas', 'Developer'],
@@ -48,6 +50,7 @@ const templates = [
     title: 'Sorelle',
     tagline: 'Ceria & hangat — desainer UI/UX',
     image: '/website-portofolio/templates/p3.webp',
+    potret: '/website-portofolio/templates/m3.webp',
     url: 'https://portfolio-sorelle.pintuweb.id',
     category: 'Kreatif',
     tags: ['Ceria', 'Pastel', 'Biru'],
@@ -61,6 +64,7 @@ const templates = [
     title: 'Aria',
     tagline: 'Glassmorphism — creative developer',
     image: '/website-portofolio/templates/p4.webp',
+    potret: '/website-portofolio/templates/m4.webp',
     url: 'https://portfolio-aria.pintuweb.id',
     category: 'Developer',
     tags: ['Gelap', 'Kaca', 'Animasi'],
@@ -74,6 +78,7 @@ const templates = [
     title: 'Rex',
     tagline: 'Neo-brutalis — tegas & lantang',
     image: '/website-portofolio/templates/p5.webp',
+    potret: '/website-portofolio/templates/m5.webp',
     url: 'https://portfolio-rex.pintuweb.id',
     category: 'Kreatif',
     tags: ['Brutalis', 'Tegas', 'Lime'],
@@ -87,6 +92,7 @@ const templates = [
     title: 'Celeste',
     tagline: 'Editorial serif — hangat & elegan',
     image: '/website-portofolio/templates/p6.webp',
+    potret: '/website-portofolio/templates/m6.webp',
     url: 'https://portfolio-celeste.pintuweb.id',
     category: 'Personal',
     tags: ['Editorial', 'Serif', 'Hangat'],
@@ -100,6 +106,7 @@ const templates = [
     title: 'Milo',
     tagline: 'Bento ceria — cerah & ramah',
     image: '/website-portofolio/templates/p7.webp',
+    potret: '/website-portofolio/templates/m7.webp',
     url: 'https://portfolio-milo.pintuweb.id',
     category: 'Kreatif',
     tags: ['Ceria', 'Bento', 'Pastel'],

@@ -1,10 +1,12 @@
 import './globals.css';
 import { Space_Grotesk } from 'next/font/google';
 import templates, { site } from './data/templates';
-import { LANJUT, GALERI_LAIN, PINTUWEB, WA_DISPLAY } from './data/pintuweb';
+import { LANJUT, BACA_JUGA, GALERI_LAIN, PINTUWEB, WA_DISPLAY } from './data/pintuweb';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import ThemeProvider from '@/components/ThemeProvider';
 import ThemeToggle from '@/components/ThemeToggle';
+import GaleriLain from '@/components/GaleriLain';
+import AksiBawah from '@/components/AksiBawah';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', weight: ['500', '600', '700'], display: 'swap' });
 
@@ -73,10 +75,12 @@ const navLinks = [
 function Logo() {
   return (
     <>
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-sm text-white" aria-hidden="true">P</span>
+      {/* Logo pintu asli PintuWeb (367x512), diberi alas putih di mode gelap */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/website-portofolio/logo-pintuweb.png" alt="" width={367} height={512} className="h-[30px] w-auto shrink-0 rounded-md dark:bg-white dark:px-1 dark:py-0.5" />
       <span className="flex flex-col leading-none">
         {site.name}{' '}
-        <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{site.label}</span>
+        <span className="mt-1 whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.1em] sm:text-[10px] sm:tracking-[0.18em] text-indigo-700 dark:text-indigo-300">{site.label}</span>
       </span>
     </>
   );
@@ -85,17 +89,11 @@ function Logo() {
 export default function RootLayout({ children }) {
   return (
     <html lang="id" className={spaceGrotesk.variable} suppressHydrationWarning>
-      <body className="bg-gray-50 font-sans text-gray-900 antialiased transition-colors dark:bg-[#0a0a12] dark:text-gray-100">
+      <body className="pb-[calc(4.5rem+env(safe-area-inset-bottom))] bg-gray-50 font-sans text-gray-900 antialiased transition-colors dark:bg-[#0a0a12] dark:text-gray-100 md:pb-0">
         <ThemeProvider>
           <a href="#konten" className="lewati">Lewati ke konten</a>
-          {/* Jejak: portal ini bagian dari PintuWeb */}
-          <nav id="top" aria-label="Jejak" className="bg-gray-900 text-xs text-gray-100">
-            <ol className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-1.5 sm:px-6 lg:px-8">
-              <li><a href={PINTUWEB} className="font-semibold underline-offset-4 hover:underline">PintuWeb</a></li>
-              <li aria-hidden="true" className="opacity-60">/</li>
-              <li aria-current="page">Website Portofolio</li>
-            </ol>
-          </nav>
+          {/* Jejak + menu Galeri lain */}
+          <GaleriLain />
           <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#0a0a12]/85">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8">
               <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
@@ -108,8 +106,8 @@ export default function RootLayout({ children }) {
               </nav>
               <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
                 <ThemeToggle />
-                <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center rounded-full bg-indigo-600 px-5 text-sm font-semibold text-white transition hover:bg-indigo-700">
-                  Hubungi
+                <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-full bg-indigo-600 px-3.5 text-sm font-semibold text-white transition hover:bg-indigo-700 sm:px-5">
+                  Pesan <span className="sm:hidden">portofolio</span><span className="hidden sm:inline">website portofolio</span>
                 </a>
               </div>
             </div>
@@ -152,6 +150,12 @@ export default function RootLayout({ children }) {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400">Baca juga</p>
+                <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
+                  {BACA_JUGA.map((l) => (
+                    <li key={l.href}><a href={l.href} className="inline-block py-1 text-sm font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-4 dark:text-indigo-300">{l.label}</a></li>
+                  ))}
+                </ul>
                 <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400">Galeri lain</p>
                 <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
                   {GALERI_LAIN.map((g) => (
@@ -166,6 +170,7 @@ export default function RootLayout({ children }) {
               </p>
             </div>
           </footer>
+        <AksiBawah wa={site.whatsapp} />
         </ThemeProvider>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
       </body>

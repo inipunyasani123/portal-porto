@@ -19,22 +19,30 @@ export const PAKET = {
   waktuAngka: '2–3',
 };
 
-/** Galeri yang tayang di www.pintuweb.id/<path> (lihat lib/portals.ts di PintuWeb). */
+/** Jenis layanan untuk pesan WhatsApp dan label tombol. */
+export const JENIS = 'website portofolio';
+
+/** Galeri yang tayang di www.pintuweb.id/<path> (lihat lib/portals.ts di PintuWeb). Urutan dan label sama di semua portal. */
 export const GALERI = [
   { path: 'landing-page', label: 'Landing Page' },
-  { path: 'link-in-bio', label: 'Link in Bio' },
-  { path: 'kontes-desain', label: 'Kontes Desain' },
-  { path: 'undangan-digital', label: 'Undangan Digital' },
-  { path: 'website-portofolio', label: 'Website Portofolio' },
-  { path: 'website-reservasi', label: 'Website Reservasi' },
-  { path: 'website-properti', label: 'Website Properti' },
-  { path: 'aplikasi-to-do', label: 'Aplikasi To-Do' },
   { path: 'toko-online', label: 'Toko Online' },
-  { path: 'menu-digital', label: 'Menu Digital' },
   { path: 'aplikasi-mobile', label: 'Aplikasi Mobile' },
+  { path: 'menu-digital', label: 'Menu Digital' },
+  { path: 'link-in-bio', label: 'Link in Bio' },
+  { path: 'kontes-desain', label: 'Konsep Desain' },
+  { path: 'undangan-digital', label: 'Undangan Digital' },
+  { path: 'website-portofolio', label: 'Portofolio Pribadi' },
+  { path: 'website-reservasi', label: 'Reservasi & Booking' },
+  { path: 'website-properti', label: 'Properti' },
+  { path: 'aplikasi-to-do', label: 'To-Do & Produktivitas' },
 ];
 
 export const GALERI_LAIN = GALERI.filter((g) => g.path !== 'website-portofolio');
+
+/** Artikel PintuWeb yang relevan untuk pengunjung portal ini ("Baca juga"). */
+export const BACA_JUGA = [
+  { href: `${PINTUWEB}/artikel/cara-memilih-jasa-pembuatan-website`, label: 'Cara memilih jasa pembuatan website' },
+];
 
 /** Paket harga (lib/packages.ts: portofolio), halaman layanan, dan galeri demo PintuWeb untuk kategori ini. */
 export const LANJUT = [

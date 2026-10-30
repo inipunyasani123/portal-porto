@@ -18,7 +18,9 @@ export default function Katalog() {
   const [cat, setCat] = useState('Semua');
   const [sort, setSort] = useState('featured');
   const [aktif, setAktif] = useState(null);
+  const [sorot, setSorot] = useState(null);
   const dialog = useRef(null);
+  const timer = useRef(null);
 
   const list = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -27,6 +29,29 @@ export default function Katalog() {
     if (sort === 'laris') r = [...r].sort((a, b) => b.terjual - a.terjual);
     return r;
   }, [query, cat, sort]);
+
+  // #slug: setel filter ke "Semua", gulir ke kartunya (scroll-mt memperhitungkan header lengket), sorot ±2 detik
+  useEffect(() => {
+    const lompat = (id) => {
+      if (!templates.some((t) => t.id === id)) return;
+      setQuery(''); setCat('Semua');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const diam = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        el.scrollIntoView({ behavior: diam ? 'auto' : 'smooth', block: 'start' });
+        setSorot(id);
+        clearTimeout(timer.current);
+        timer.current = setTimeout(() => setSorot(null), 2200);
+      }, 60);
+    };
+    const dariHash = () => lompat(decodeURIComponent(window.location.hash.slice(1)));
+    const dariEvent = (e) => lompat(e.detail);
+    dariHash();
+    window.addEventListener('hashchange', dariHash);
+    window.addEventListener('porto:lompat', dariEvent);
+    return () => { window.removeEventListener('hashchange', dariHash); window.removeEventListener('porto:lompat', dariEvent); clearTimeout(timer.current); };
+  }, []);
 
   // <dialog> bawaan: fokus terkunci di dalam, Esc menutup, fokus kembali ke tombol pemicu
   useEffect(() => { if (aktif && !dialog.current.open) dialog.current.showModal(); }, [aktif]);
@@ -73,8 +98,8 @@ export default function Katalog() {
 
       <ul className="grid grid-cols-1 gap-6 py-8 sm:grid-cols-2 sm:gap-8 sm:py-10 lg:grid-cols-3 lg:[&>li:first-child]:col-span-2">
         {list.map((t) => (
-          <li key={t.id} style={{ viewTransitionName: `porto-${t.id}` }}>
-            <TemplateCard template={t} onDetail={setAktif} />
+          <li key={t.id} id={t.id} className="scroll-mt-24" style={{ viewTransitionName: `porto-${t.id}` }}>
+            <TemplateCard template={t} onDetail={setAktif} sorot={sorot === t.id} />
           </li>
         ))}
         {/* Petak penutup: gaya yang belum ada di koleksi */}

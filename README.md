@@ -17,6 +17,10 @@ Katalog template portfolio. Hero bento, kartu berbingkai browser yang menggulir 
 - Tanpa testimoni atau rating bintang: portal ini belum punya ulasan pelanggan sungguhan.
 - Pratinjau `public/templates/p<n>.webp` (1280×880 @2x) dan `f<n>.webp` (halaman penuh, lebar 900) diambil dari demo live (22 Okt 2026); urutan n: noelle, carlos, sorelle, aria, rex, celeste, milo. Setelah mengganti `p<n>.webp`, buat ulang variannya dengan `node scripts/gambar-varian.mjs`.
 
+## Tautan langsung per demo
+
+Tiap kartu punya `id` = slug: `noelle`, `carlos`, `sorelle`, `aria`, `rex`, `celeste`, `milo`. Membuka `/website-portofolio#slug` menggulir ke kartunya, mereset pencarian dan filter ke "Semua", lalu menyorotnya ±2 detik. Gambar potret ponsel (390x844 @2x) ada di `public/templates/m<n>.webp` (dipakai strip hero dan kartu < 640 px); `p<n>`/`f<n>` diambil ulang 30 Okt 2026 dari demo live. Sumber gambar: `public/SUMBER.md`.
+
 ## Varian yang dipamerkan (7)
 
 - [Aria](https://portfolio-aria.pintuweb.id)
