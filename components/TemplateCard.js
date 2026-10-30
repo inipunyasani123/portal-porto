@@ -35,7 +35,7 @@ export default function TemplateCard({ template, onDetail, sorot }) {
         </button>
         <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-indigo-700 shadow-sm backdrop-blur dark:bg-black/60 dark:text-indigo-200" aria-hidden="true">{category}</span>
         <span className="sentuh-sembunyi pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gray-900/75 px-3 py-1 text-[11px] font-medium text-white opacity-0 backdrop-blur transition group-hover:opacity-100" aria-hidden="true">
-          ↕ Kursor di sini = gulir halaman penuh
+          ↕ Arahkan kursor untuk melihat halaman penuh
         </span>
       </div>
 

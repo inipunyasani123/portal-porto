@@ -31,14 +31,14 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
           <div className="min-w-0 text-center lg:text-left">
             <span className="naik hidden items-center gap-2 sm:inline-flex rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-200">
-              <span aria-hidden="true" className="text-indigo-500 dark:text-indigo-300">◆</span> {templates.length} template · {templates.length} gaya
+              <span aria-hidden="true" className="text-indigo-500 dark:text-indigo-300">◆</span> {templates.length} contoh · {templates.length} gaya
             </span>
             <h1 className="text-[2rem] sm:mt-5 sm:text-[2.5rem] font-extrabold leading-[1.04] tracking-tight text-gray-900 md:text-6xl dark:text-white">
               Website portofolio, <span className="text-indigo-600 dark:text-indigo-400">siap diisi karyamu</span>.
             </h1>
-            <p className="mx-auto mt-5 hidden max-w-xl text-base sm:block text-gray-600 sm:text-lg lg:mx-0 dark:text-gray-300">{site.description}</p>
+            <p className="mx-auto mt-4 max-w-xl text-base sm:mt-5 text-gray-600 sm:text-lg lg:mx-0 dark:text-gray-300">{site.description}</p>
             <div className="naik naik-2 mt-4 flex flex-wrap justify-center gap-3 sm:mt-8 lg:justify-start">
-              <a href="#templates" className="inline-flex min-h-12 items-center rounded-full bg-indigo-600 px-6 font-semibold text-white shadow-lg shadow-indigo-600/20 transition hover:bg-indigo-700 active:scale-95 sm:px-7">Lihat Template</a>
+              <a href="#templates" className="inline-flex min-h-12 items-center rounded-full bg-indigo-600 px-6 font-semibold text-white shadow-lg shadow-indigo-600/20 transition hover:bg-indigo-700 active:scale-95 sm:px-7">Lihat Contoh</a>
               <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-gray-300 bg-white px-6 font-semibold text-gray-800 transition hover:border-indigo-300 hover:text-indigo-700 active:scale-95 sm:px-7 dark:border-white/15 dark:bg-white/5 dark:text-gray-200 dark:hover:text-white">Konsultasi Gratis</a>
             </div>
             {/* Ringkasan paket: angka dari PAKET (PintuWeb packages.ts) */}
@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="flex w-max animate-marquee items-center">
           {[0, 1].map((r) => (
             <div key={r} className="flex shrink-0 items-center">
-              {['Next.js', 'Tailwind CSS', 'Terang & gelap', 'Responsif', 'SEO dasar', 'Studi kasus', 'Multi-halaman'].map((t) => (
+              {['Terang & gelap', 'Enak dibuka di HP', 'Mudah ditemukan di Google', 'Contoh hasil karya', 'Banyak halaman'].map((t) => (
                 <span key={t} className="flex items-center">
                   <span className="px-6 text-sm font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400">{t}</span>
                   <span className="text-indigo-300 dark:text-indigo-500/60">◆</span>
@@ -92,8 +92,8 @@ export default function HomePage() {
       <section id="templates" aria-labelledby="judul-koleksi" className="scroll-mt-[72px] px-4 pt-10 sm:px-6 sm:pt-14 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 id="judul-koleksi" className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl dark:text-white">Koleksi Template</h2>
-            <p className="mx-auto mt-3 max-w-xl text-gray-600 dark:text-gray-400">Buka demo live, intip studi kasusnya, lalu pesan. Di desktop, arahkan kursor ke kartu untuk menggulir halaman penuhnya.</p>
+            <h2 id="judul-koleksi" className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl dark:text-white">Pilih Contohnya</h2>
+            <p className="mx-auto mt-3 max-w-xl text-gray-600 dark:text-gray-400">Buka demo-nya, lalu pesan yang paling cocok.</p>
           </div>
           <Katalog />
         </div>
@@ -104,7 +104,6 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="sm:text-center">
             <h2 id="judul-keunggulan" className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl dark:text-white">Kenapa pilih {site.name}?</h2>
-            <p className="mt-3 max-w-xl text-gray-600 sm:mx-auto dark:text-gray-400">Yang sudah dikerjakan di setiap template sebelum sampai ke tanganmu.</p>
           </div>
           <ul className="mt-8 grid gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {features.map((f) => {
@@ -128,7 +127,6 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="sm:text-center">
             <h2 id="judul-cara" className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl dark:text-white">Cara Pesan</h2>
-            <p className="mt-3 max-w-xl text-gray-600 sm:mx-auto dark:text-gray-400">Empat langkah dari memilih template sampai situsmu online.</p>
           </div>
           <ol className="mt-8 grid gap-3 sm:mt-12 sm:gap-6 md:grid-cols-4">
             {process.map((p) => (
@@ -149,7 +147,6 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl">
           <div className="sm:text-center">
             <h2 id="judul-faq" className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl dark:text-white">Pertanyaan Umum</h2>
-            <p className="mt-3 max-w-xl text-gray-600 sm:mx-auto dark:text-gray-400">Hal-hal yang sering ditanyakan sebelum memesan.</p>
           </div>
           <div className="mt-8 space-y-3 sm:mt-10">
             {faqs.map((f, i) => (
@@ -170,7 +167,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl rounded-3xl bg-gradient-to-r from-indigo-600 to-violet-700 p-8 text-center text-white shadow-xl sm:p-10">
           <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight sm:text-4xl">Karyamu sudah siap. Tinggal rumahnya.</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-            Pilih template favoritmu, kirim proyek dan fotomu — kami ganti isi contohnya dengan milikmu dalam {PAKET.waktu}.
+            Pilih contoh favoritmu, kirim karya dan fotomu. Selesai dalam {PAKET.waktu}.
           </p>
           <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-7 font-semibold text-indigo-700 shadow-md transition hover:bg-indigo-100">
             <ChatBubbleLeftRightIcon className="h-5 w-5" aria-hidden="true" /> Chat via WhatsApp

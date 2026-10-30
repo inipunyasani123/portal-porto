@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-displ
 // Merek di hasil pencarian & pratinjau tautan = PintuWeb. Jumlah template dihitung dari data, bukan ditulis tangan.
 const URL_PORTAL = 'https://www.pintuweb.id/website-portofolio';
 const TITLE = `Contoh Website Portofolio: ${templates.length} Demo Siap Coba | PintuWeb`;
-const DESCRIPTION = `${templates.length} contoh website portofolio dengan gaya berbeda untuk desainer, developer, dan kreator. Buka demo live dan studi kasusnya, lalu pesan di PintuWeb.`;
+const DESCRIPTION = `${templates.length} contoh website portofolio untuk desainer, developer, dan kreator. Buka demo-nya, lalu pesan di PintuWeb.`;
 
 // CollectionPage + daftar templatenya (ItemList) + jejak. Data dari templates.js, jadi ikut bertambah sendiri.
 const __jsonld = {
@@ -66,7 +66,7 @@ export const metadata = {
 };
 
 const navLinks = [
-  { label: 'Template', href: '#templates' },
+  { label: 'Contoh', href: '#templates' },
   { label: 'Keunggulan', href: '#keunggulan' },
   { label: 'Cara Pesan', href: '#cara-pesan' },
   { label: 'FAQ', href: '#faq' },
@@ -120,7 +120,7 @@ export default function RootLayout({ children }) {
               <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3">
                 <div className="col-span-2 md:col-span-1">
                   <p className="flex items-center gap-2 font-display text-lg font-bold"><Logo /></p>
-                  <p className="mt-3 max-w-xs text-sm text-gray-600 dark:text-gray-400">{templates.length} template portofolio modern, cepat, dan siap diisi karyamu.</p>
+                  <p className="mt-3 max-w-xs text-sm text-gray-600 dark:text-gray-400">{templates.length} contoh website portofolio, siap diisi karyamu.</p>
                 </div>
                 <nav aria-labelledby="kaki-navigasi">
                   <p id="kaki-navigasi" className="text-sm font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400">Navigasi</p>

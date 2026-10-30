@@ -64,8 +64,8 @@ export default function Katalog() {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Cari template atau gaya…"
-          aria-label="Cari template"
+          placeholder="Cari contoh atau gaya…"
+          aria-label="Cari contoh"
           className="w-full rounded-full border border-gray-300 bg-white py-3 pl-12 pr-4 text-base shadow-sm outline-none transition placeholder:text-gray-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 sm:text-sm dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-indigo-500/30"
         />
       </div>
@@ -94,7 +94,7 @@ export default function Katalog() {
           </select>
         </label>
       </div>
-      <p className="sr-only" aria-live="polite">{list.length} template ditampilkan</p>
+      <p className="sr-only" aria-live="polite">{list.length} contoh ditampilkan</p>
 
       <ul className="grid grid-cols-1 gap-6 py-8 sm:grid-cols-2 sm:gap-8 sm:py-10 lg:grid-cols-3 lg:[&>li:first-child]:col-span-2">
         {list.map((t) => (
@@ -105,16 +105,16 @@ export default function Katalog() {
         {/* Petak penutup: gaya yang belum ada di koleksi */}
         <li className="flex flex-col justify-between gap-5 rounded-2xl border-2 border-dashed border-indigo-200 bg-indigo-50/60 p-6 dark:border-indigo-400/30 dark:bg-indigo-500/10">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:text-indigo-300">Template ke-{templates.length + 1}</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:text-indigo-300">Contoh ke-{templates.length + 1}</p>
             <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">Belum ada gaya yang pas?</h3>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Ceritakan karyamu dan referensi yang kamu suka. Kami susun portofolio dengan gaya sendiri.</p>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Ceritakan karyamu dan gaya yang kamu suka. Kami buatkan sendiri.</p>
           </div>
           <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 self-start rounded-full bg-indigo-600 px-5 text-sm font-semibold text-white transition hover:bg-indigo-700">
             <ChatBubbleLeftRightIcon className="h-4 w-4" aria-hidden="true" /> Diskusikan via WhatsApp
           </a>
         </li>
       </ul>
-      {list.length === 0 && <p className="pb-10 text-center text-gray-600 dark:text-gray-400">Tidak ada template yang cocok. Coba kata kunci lain.</p>}
+      {list.length === 0 && <p className="pb-10 text-center text-gray-600 dark:text-gray-400">Tidak ada contoh yang cocok. Coba kata kunci lain.</p>}
 
       <dialog
         ref={dialog}
@@ -126,7 +126,7 @@ export default function Katalog() {
         {aktif && (
           <div>
             <div className="relative aspect-[16/10] w-full bg-gray-100 dark:bg-white/5">
-              <Image src={aktif.image} alt={`Beranda template ${aktif.title}`} fill sizes="(max-width: 700px) 92vw, 672px" className="object-cover object-top" />
+              <Image src={aktif.image} alt={`Beranda contoh ${aktif.title}`} fill sizes="(max-width: 700px) 92vw, 672px" className="object-cover object-top" />
               <button type="button" onClick={() => dialog.current.close()} aria-label="Tutup detail" className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-gray-800 shadow hover:text-gray-950">
                 <XMarkIcon className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -139,16 +139,12 @@ export default function Katalog() {
               <ul className="mt-2 flex flex-wrap gap-2">
                 {aktif.pages.map((pg) => <li key={pg} className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-200">{pg}</li>)}
               </ul>
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400">Dibangun dengan</p>
-              <ul className="mt-2 flex flex-wrap gap-2">
-                {aktif.stack.map((s) => <li key={s} className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-white/10 dark:text-gray-300">{s}</li>)}
-              </ul>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a href={aktif.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-indigo-600 px-6 text-sm font-semibold text-white transition hover:bg-indigo-700">
                   Buka demo<span className="sr-only"> {aktif.title} (tab baru)</span> <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <a href={waTemplate(aktif)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-full border border-gray-300 px-6 text-sm font-semibold text-gray-800 transition hover:border-indigo-300 hover:text-indigo-700 dark:border-white/15 dark:text-gray-200 dark:hover:text-white">
-                  Pesan template ini
+                  Pesan contoh ini
                 </a>
               </div>
             </div>
