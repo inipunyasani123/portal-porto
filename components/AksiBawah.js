@@ -20,6 +20,8 @@ export default function AksiBawah({ wa }) {
   const tampak = heroLewat && !footerTampak;
   return (
     <div
+      role="region"
+      aria-label="Aksi cepat"
       inert={!tampak}
       className={`fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-gray-200 bg-white/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-12px_rgba(15,15,40,0.25)] backdrop-blur transition-transform duration-300 md:hidden dark:border-white/10 dark:bg-[#0a0a12]/95 ${tampak ? 'translate-y-0' : 'translate-y-full'}`}
     >
