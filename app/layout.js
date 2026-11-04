@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
               <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
                 <ThemeToggle />
                 <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-full bg-indigo-600 px-3.5 text-sm font-semibold text-white transition hover:bg-indigo-700 sm:px-5">
-                  Pesan <span className="sm:hidden">portofolio</span><span className="hidden sm:inline">website portofolio</span>
+                  Pesan <span className="max-[399px]:sr-only sm:hidden">portofolio</span><span className="hidden sm:inline">website portofolio</span>
                 </a>
               </div>
             </div>
